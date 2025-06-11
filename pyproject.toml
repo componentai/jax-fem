@@ -6,6 +6,13 @@ build-backend = "hatchling.build"
 name = "jax-fem"
 version = "0.0.9"
 requires-python = ">=3.9"
+dependencies = [
+  "basix",
+  "fenics-basix",
+  "jax",
+  "petsc4py",
+  "pyfiglet",
+]
 authors = [
   {name = "Tianju Xue", email = "cetxue@ust.hk"},
   {name = "Weipeng Xu", email = "xwpscut@outlook.com"}
