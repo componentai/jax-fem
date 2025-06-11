@@ -1,5 +1,6 @@
 import numpy as onp
 import jax
+import jax.tree
 import jax.numpy as np
 import jax.flatten_util
 from dataclasses import dataclass
@@ -325,9 +326,9 @@ class Problem:
             jacs = []
             for i in range(num_cuts):
                 if i < num_cuts - 1:
-                    input_col = jax.tree_map(lambda x: x[i * batch_size:(i + 1) * batch_size], input_collection)
+                    input_col = jax.tree.map(lambda x: x[i * batch_size:(i + 1) * batch_size], input_collection)
                 else:
-                    input_col = jax.tree_map(lambda x: x[i * batch_size:], input_collection)
+                    input_col = jax.tree.map(lambda x: x[i * batch_size:], input_collection)
 
                 val, jac = vmap_fn(*input_col)
                 values.append(val)
@@ -340,9 +341,9 @@ class Problem:
             values = []
             for i in range(num_cuts):
                 if i < num_cuts - 1:
-                    input_col = jax.tree_map(lambda x: x[i * batch_size:(i + 1) * batch_size], input_collection)
+                    input_col = jax.tree.map(lambda x: x[i * batch_size:(i + 1) * batch_size], input_collection)
                 else:
-                    input_col = jax.tree_map(lambda x: x[i * batch_size:], input_collection)
+                    input_col = jax.tree.map(lambda x: x[i * batch_size:], input_collection)
 
                 val = vmap_fn(*input_col)
                 values.append(val)
