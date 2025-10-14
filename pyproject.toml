@@ -31,3 +31,6 @@ classifiers = [
 
 [tool.setuptools]
 packages = ["jax_fem"]
+
+[tool.uv]
+no-build-isolation-package = ["petsc4py"]
