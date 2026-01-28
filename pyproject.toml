@@ -9,7 +9,6 @@ requires-python = ">=3.9"
 dependencies = [
   "fenics-basix",
   "jax",
-  "petsc4py",
 ]
 authors = [
   {name = "Tianju Xue", email = "cetxue@ust.hk"},
@@ -34,3 +33,7 @@ packages = ["jax_fem"]
 
 [tool.uv]
 no-build-isolation-package = ["petsc", "petsc4py"]
+
+[project.optional-dependencies]
+petsc = ["petsc4py"]
+  
