@@ -9,7 +9,7 @@ requires-python = ">=3.9"
 dependencies = [
   "fenics-basix",
   "jax",
-  "petsc4py",
+  "petsc4py == 3.25",
 ]
 authors = [
   {name = "Tianju Xue", email = "cetxue@ust.hk"},
